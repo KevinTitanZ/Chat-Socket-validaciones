@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+body, main, form, label, input, button {
+    font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+}
+
+main {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 70vh;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+main form {
+    width: 100%;
+    max-width: 400px;
+    padding: 32px 28px 24px 28px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+main form .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+main form .input-group label {
+    text-align: left;
+    margin-bottom: 3px;
+    font-weight: 600;
+    color: #7C4DFF;
+    font-size: 1rem;
+}
+
+main form .input-group input {
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 1rem;
+    background: #f8fafc;
+    transition: border-color 0.2s;
+}
+
+main form .input-group input:focus {
+    border-color: #7C4DFF;
+    box-shadow: 0 0 0 0.15rem rgba(124,77,255,.15);
+}
+
+main form .button-container {
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+}
+
+main form button, main form .btn {
+    background: #7C4DFF;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    transition: background 0.2s;
+}
+
+main form button:hover, main form .btn:hover {
+    background: #8356fd;
+}

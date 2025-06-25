@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Regístrate</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/register.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    header h1 {
+      margin-bottom: 2rem;
+      color: #075e54;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    form.card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1.5rem;
+    }
+
+    .input-group label {
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .input-group input {
+      padding: 0.8rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .input-group input:focus {
+      border-color: #25d366;
+    }
+
+    .button-container {
+      text-align: center;
+    }
+
+    .btn.primary {
+      background-color: #25d366;
+      color: white;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 2rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn.primary:hover {
+      background-color: #1ebd5b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bienvenido a Web Chat 💬</h1>
+  </header>
+
+  <main>
+    <form action="#" method="post" class="card">
+      <div class="input-group">
+        <label for="username">Ingresa tu nombre de usuario</label>
+        <input type="text" id="username" placeholder="Ej. julian123" />
+      </div>
+      <div class="button-container">
+        <button type="button" class="btn primary" id="login">Ingresar al chat</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="js/register.js"></script>
+</body>
+</html>
