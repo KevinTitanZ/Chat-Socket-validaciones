@@ -50,14 +50,14 @@ __Paso 4: Creación de una ruta para provocar errores__
 
 En el archivo routes/index.js, se definió la ruta /provocar-error, la cual lanza de forma controlada una instancia de CustomError. Esta ruta sirve como prueba para verificar que el sistema detecta, procesa y responde ante errores definidos por el desarrollador.
 
-![grafico3](https://i.imgur.com/tIc8HAf.png)
+![grafico3](https://imgur.com/tIc8HAf.png)
 
 
 __Paso 5: Verificación en el navegador__
 
 Al acceder a http://localhost:3000/provocar-error, el servidor responde con un objeto JSON que informa del error y su mensaje. Simultáneamente, el error es registrado en la consola del servidor. Esto confirma que el flujo de captura y manejo de errores está funcionando correctamente.
 
-![grafico4](https://i.imgur.com/uNk1Tjm.png)
+![grafico4](https://imgur.com/uNk1Tjm.png)
 
 
 ## Conclusiones
