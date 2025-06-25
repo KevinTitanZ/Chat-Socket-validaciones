@@ -40,6 +40,8 @@ __Paso 2: Implementación del middleware de errores__
 
 Se creó un middleware en la carpeta middlewares, el cual se encarga de recibir los errores propagados desde cualquier parte del sistema mediante next(err). Este componente detecta el código de estado definido por el error (si existe) y genera una respuesta JSON clara para el cliente. También registra el error en la consola utilizando console.error.
 
+![grafico2](https://i.imgur.com/31NaDvq.png)
+
 __Paso 3: Integración del middleware en el servidor principal__
 
 En el archivo index.js, se integró el middleware de errores justo después de todas las rutas y controladores. También se añadió una ruta genérica para capturar errores 404 cuando no se encuentra el recurso solicitado.
@@ -48,9 +50,15 @@ __Paso 4: Creación de una ruta para provocar errores__
 
 En el archivo routes/index.js, se definió la ruta /provocar-error, la cual lanza de forma controlada una instancia de CustomError. Esta ruta sirve como prueba para verificar que el sistema detecta, procesa y responde ante errores definidos por el desarrollador.
 
+![grafico3](https://i.imgur.com/tIc8HAf.png)
+
+
 __Paso 5: Verificación en el navegador__
 
 Al acceder a http://localhost:3000/provocar-error, el servidor responde con un objeto JSON que informa del error y su mensaje. Simultáneamente, el error es registrado en la consola del servidor. Esto confirma que el flujo de captura y manejo de errores está funcionando correctamente.
+
+![grafico4](https://i.imgur.com/uNk1Tjm.png)
+
 
 ## Conclusiones
 * La implementación de un middleware centralizado de errores mejora significativamente la capacidad de diagnóstico y respuesta del sistema frente a fallos.
