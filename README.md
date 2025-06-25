@@ -1,7 +1,13 @@
 #  Chat en Tiempo Real con Sockets y Manejo de Errores
 
-**Estudiante:** _Ordoñez Cabrera Kevin Lenin_  
-**Fecha de entrega:** _27/06/2025_
+**Estudiante:** _Ordoñez Cabrera Kevin Lenin_   
+
+**Fecha de entrega:** _27/06/2025_ 
+
+**Carrera/Curso:**  _Ingeniería en Tecnologías de la Información / Aplicaciones Distribuidas_
+
+**Título del informe:**  _Manejo de Excepciones en Aplicaciones Node.js aplicadas al Proyecto Chat con Socket.IO_
+
 
 ---
 
@@ -27,8 +33,25 @@ El manejo de errores en aplicaciones web es un componente esencial para garantiz
 
 
 ## Desarrollo
+### Tipos de Errores en Node.js
+__1. Errores de Sintaxis (SyntaxError)__
 
-__Paso 1: Creación de la clase CustomError__
+Ocurren cuando el código escrito no sigue las reglas del lenguaje, como llaves mal cerradas o palabras clave mal usadas. Estos errores impiden que el programa se ejecute.
+
+__2. Errores en Tiempo de Ejecución (ReferenceError, TypeError)__
+
+Se presentan cuando se hace referencia a una variable no definida (ReferenceError) o cuando se intenta utilizar un tipo de dato de manera incorrecta (TypeError).
+
+__3. Errores del Sistema (SystemError)__
+
+Estos errores están relacionados con operaciones del sistema, como problemas de lectura de archivos o permisos de red.
+
+__4. Errores Personalizados (CustomError)__
+
+Son definidos por el desarrollador para representar errores específicos del dominio de la aplicación. Permiten personalizar el mensaje y el código de estado HTTP.
+
+## __Ejemplo Aplicado: Proyecto Chat con Socket.IO__
+### __Paso 1: Creación de la clase CustomError__
 
 En la carpeta utils, se implementó una clase denominada CustomError, la cual hereda de la clase base Error de JavaScript. Esta clase permite definir errores con mensajes personalizados y códigos de estado HTTP específicos, facilitando su uso en rutas y middleware.
 
@@ -36,28 +59,28 @@ En la carpeta utils, se implementó una clase denominada CustomError, la cual he
 ![grafico1](https://i.imgur.com/49202RM.png)
 
 
-__Paso 2: Implementación del middleware de errores__
+### __Paso 2: Implementación del middleware de errores__
 
 Se creó un middleware en la carpeta middlewares, el cual se encarga de recibir los errores propagados desde cualquier parte del sistema mediante next(err). Este componente detecta el código de estado definido por el error (si existe) y genera una respuesta JSON clara para el cliente. También registra el error en la consola utilizando console.error.
 
 ![grafico2](https://i.imgur.com/31NaDvq.png)
 
-__Paso 3: Integración del middleware en el servidor principal__
+### __Paso 3: Integración del middleware en el servidor principal__
 
 En el archivo index.js, se integró el middleware de errores justo después de todas las rutas y controladores. También se añadió una ruta genérica para capturar errores 404 cuando no se encuentra el recurso solicitado.
 
-__Paso 4: Creación de una ruta para provocar errores__
+### __Paso 4: Creación de una ruta para provocar errores__
 
 En el archivo routes/index.js, se definió la ruta /provocar-error, la cual lanza de forma controlada una instancia de CustomError. Esta ruta sirve como prueba para verificar que el sistema detecta, procesa y responde ante errores definidos por el desarrollador.
 
-![grafico3](https://imgur.com/tIc8HAf.png)
+![grafico3](https://i.imgur.com/tIc8HAf.png)
 
 
-__Paso 5: Verificación en el navegador__
+### __Paso 5: Verificación en el navegador__
 
 Al acceder a http://localhost:3000/provocar-error, el servidor responde con un objeto JSON que informa del error y su mensaje. Simultáneamente, el error es registrado en la consola del servidor. Esto confirma que el flujo de captura y manejo de errores está funcionando correctamente.
 
-![grafico4](https://imgur.com/uNk1Tjm.png)
+![grafico4](https://i.imgur.com/uNk1Tjm.png)
 
 
 ## Conclusiones
